@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Bangles</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="footer.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .breadcrumb-container {
+            padding: 10px 20px;
+            background: #f8f9fa;
+        }
+
+        .breadcrumb-container a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        .main-image {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .thumb {
+            width: 80px;
+            height: 80px;
+            margin-right: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .thumb:hover {
+            border-color: #ff9800;
+        }
+
+        .price {
+            color: #ff5722;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .discount {
+            color: green;
+            font-size: 14px;
+        }
+
+        .color-options {
+            display: flex;
+        }
+
+        .color-box {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .purple {
+            background: purple;
+        }
+
+        .baby-pink {
+            background: pink;
+        }
+
+        .white {
+            background: white;
+            border: 1px solid #ccc;
+        }
+
+        .quantity-selector input {
+            width: 50px;
+            text-align: center;
+        }
+
+        .review {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .input-group {
+            width: 120px;
+        }
+
+        #quantity {
+            width: 120px;
+            /* Decreased the width to make it smaller */
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-custom {
+            width: 100%;
+            /* Buttons full width honge */
+            padding: 12px;
+            /* Thoda aur bada dikhne ke liye */
+            font-size: 18px;
+            /* Text bada aur readable hoga */
+        }
+    </style>
+</head>
+
+
+<body>
+    <header>
+        <div>
+            <p class="navfree py-1 ">Free Shipping on orders of 6 items or more </p>
+        </div>
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <div class="container">
+                <a class="navbar-brand " href="index.html"><img src="assets/logo.png" alt="Tj Jewellers"
+                        class="logojewellerys"></a>
+                <form class="d-flex search-box position-relative" onsubmit="return false;">
+                    <input type="search" id="searchInput" class="form-control rounded-pill ps-5 border-gold shadow-sm"
+                        placeholder="Search for jewellery..." onkeyup="showSuggestions()">
+                    <button class="btn position-absolute start-0 top-50 translate-middle-y ms-3 text-gold" type="button"
+                        onclick="redirectToPage()">
+                        <i class="bi bi-search"></i>
+                    </button>
+                    <ul id="suggestionsList" class="suggestions-list"></ul>
+                </form>
+
+                <div class="nav-icons d-flex align-items-center">
+                    <a class="nav-link mx-2 fs-5" href="wishlist.html"><i class="bi bi-heart"></i></a>
+                    <a class="nav-link mx-2 fs-5" href="cart.html"><i class="bi bi-bag"></i></a>
+                    <a class="nav-link mx-2 fs-5" href="#" data-bs-toggle="modal" data-bs-target="#authModal">
+                        <i class="bi bi-person-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content p-4 rounded-4">
+                    <div class="modal-body text-center">
+                        <h4 class="fw-bold">Your Account</h4>
+                        <p class="text-muted mb-4">Access account &amp; manage your orders.</p>
+                        <div class="d-flex justify-content-center gap-3">
+                            <button class="btn btn-primary px-4 py-2 rounded"
+                                onclick="window.location.href='signup.html'">Sign Up</button>
+                            <button class="btn btn-login px-4 py-2 rounded"
+                                onclick="window.location.href='login.html'">Log
+                                In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg sticky-lg-top mb-15 ">
+            <div class="container">
+                <div class="collapse navbar-collapse " id="navbarNav ">
+                    <ul class="navbar-nav g-4">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="necklace.html" id="navbarDropdown" role="button">
+                                necklace sets
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="Earrings.html" id="navbarDropdown" role="button">
+                                earrings
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="pendant.html" id="navbarDropdown" role="button">
+                                chain Pendant
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="finger_ring.html" id="navbarDropdown" role="button">
+                                finger rings
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="bangles.html" id="navbarDropdown" role="button">
+                                bangles
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="bracelets.html" id="navbarDropdown" role="button">
+                                men's bracelet
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="juda.html" id="navbarDropdown" role="button">
+                                juda
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="saree.html" id="navbarDropdown" role="button">
+                                saree pin
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="maangtikka.html" id="navbarDropdown" role="button">
+                                maang tikka
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <main>
+        <nav class="breadcrumb-container">
+            <a href="#">Home</a> &gt; <a href="#">Gold plated Kundan studded Multi Color Pearl dangle handcrafted Ethnic
+                Earrings</a>
+        </nav>
+
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Product Image Gallery -->
+                <div class="col-md-6">
+                    <img id="mainImage" src="assets/1722073438446.jpeg" class="img-fluid main-image" alt="Necklace">
+                    <div class="thumbnail-container">
+                        <img src="assets/1722073438446.jpeg" class="thumb" onclick="changeImage(this.src)">
+                        <img src="assets/1724310539212.jpeg" class="thumb" onclick="changeImage(this.src)">
+                        <img src="assets/1724497688487.jpeg" class="thumb" onclick="changeImage(this.src)">
+                    </div>
+                </div>
+
+                <!-- Product Details -->
+                <div class="col-md-6">
+                    <h2>Gold plated Kundan studded Multi Color Pearl dangle handcrafted Ethnic Earrings</h2>
+                    <p class="text-muted">SKU: Sparsh - Silver - White</p>
+                    <h3 class="price">₹233 <span class="old-price">₹424</span> <span class="discount">(45% OFF)</span>
+                    </h3>
+
+                    <p><strong>Offers:</strong> Buy any 4 & Get @ ₹99</p>
+
+                    <!-- Quantity Selector -->
+                    <div class="quantity-selector mt-3">
+                        <label for="quantity" class="form-label">Quantity:</label>
+                        <div class="d-flex align-items-center" style="max-width: 200px;">
+                            <button class="btn btn-outline-secondary" type="button"
+                                onclick="changeQuantity(-1)">−</button>
+                            <input type="number" id="quantity" class="form-control text-center mx-2" value="1" min="1"
+                                max="10" style="width: 60px;">
+                            <button class="btn btn-outline-secondary" type="button"
+                                onclick="changeQuantity(1)">+</button>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Buttons -->
+                    <button class="btn btn-warning mt-3">Add to Cart</button>
+                    <button class="btn btn-dark mt-3">Buy Now</button>
+
+                    <!-- Product Description -->
+                    <h4 class="mt-4">Product Description</h4>
+                    <p>Enhance your elegance with these exquisite Silver plated Handcrafted Kundan Pearl Earrings. Each
+                        piece is meticulously
+                        crafted to blend traditional Kundan craftsmanship with modern sensibilities, creating a timeless
+                        allure. The lustrous
+                        pearls delicately complement the intricate silver plating, adding a touch of sophistication to
+                        any ensemble. Whether for
+                        a formal occasion or to elevate everyday attire, these earrings are a testament to artisanal
+                        skill and refined taste.
+                        Elevate your jewelry collection with these captivating pieces that effortlessly combine cultural
+                        heritage with
+                        contemporary style.</p>
+
+                    <!-- Customer Reviews -->
+                    <h4 class="mt-4">Customer Reviews (4.6 ⭐ | 29 Reviews)</h4>
+                    <div class="review">
+                        <strong>BEAUTIFUL</strong> ⭐⭐⭐⭐⭐ <br>
+                        <p>This Earring is stunning! The design is so unique and elegant.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recently Viewed & Suggestions -->
+            <h4 class="mt-5">You May Also Like</h4>
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="assets/1722073438446.jpeg" class="img-fluid">
+                    <p>Lavish Rose Gold Necklace <br> ₹233 <span class="old-price">₹424</span></p>
+                </div>
+                <div class="col-md-3">
+                    <img src="assets/1722072430753.jpeg" class="img-fluid">
+                    <p>Radiant Floral Necklace <br> ₹290 <span class="old-price">₹464</span></p>
+                </div>
+                <div class="col-md-3">
+                    <img src="assets/1719922076428.jpeg" class="img-fluid">
+                    <p>Radiant Floral Necklace <br> ₹290 <span class="old-price">₹464</span></p>
+                </div>
+                <div class="col-md-3">
+                    <img src="assets/1719922648757.jpeg" class="img-fluid">
+                    <p>Radiant Floral Necklace <br> ₹290 <span class="old-price">₹464</span></p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+    <footer>
+        <!-- place footer here -->
+        <div class="container">
+            <footer class="py-5">
+                <div class="row">
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>Our Policies</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy
+                                    Policy</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Refund
+                                    Policy</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Terms of
+                                    Usage</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Shipping
+                                    Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>About Us</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact
+                                    Us </a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Sitemap</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>Contact Details</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"> </a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-5 offset-md-1 mb-3">
+                        <form>
+                            <h5>Subscribe to our newsletter</h5>
+                            <p>Monthly digest of what's new and exciting from us.</p>
+                            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                                <label for="newsletter1" class="visually-hidden">Email address</label>
+                                <input id="newsletter1" type="text" class="form-control" placeholder="Email address"
+                                    autocomplete="off">
+                                <button class="btn btn-primary" type="button">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                    <p>© 2024 Company, Inc. All rights reserved.</p>
+                    <ul class="list-unstyled d-flex">
+                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#twitter"></use>
+                                </svg></a></li>
+                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#instagram"></use>
+                                </svg></a></li>
+                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#facebook"></use>
+                                </svg></a></li>
+                    </ul>
+                </div>
+                <div class="container popular-searches ">
+                    <h4 class="mb-4">Popular Searches</h4>
+
+                    <!-- Gifts Section -->
+                    <div>
+                        <div class="section-title">Gifts</div>
+                        <div class="search-links">
+                            <a href="#">Gifts For Men</a> |
+                            <a href="#">Womens Day Gifts</a> |
+                            <a href="#">Gifts Under 10000</a> |
+                            <a href="#">Gifts Under 30000</a> |
+                            <a href="#">Gifts Under 50000</a> |
+                            <a href="#">CaratLane Gift Cards</a> |
+                            <a href="#">Birthday Gifts</a> |
+                            <a href="#">Anniversary Gifts</a> |
+                            <a href="#">Romantic Gifts</a> |
+                            <a href="#">Gifts For Kids</a> |
+                            <a href="#">Gifts For Sister</a> |
+                            <a href="#">Gifts For Mom</a> |
+                            <a href="#">Gifts For Girlfriend</a>
+                        </div>
+                        <hr>
+                    </div>
+
+                    <!-- CaratLane Exclusives -->
+                    <div>
+                        <div class="section-title">CaratLane Exclusives</div>
+                        <div class="search-links">
+                            <a href="#">New Arrivals</a> |
+                            <a href="#">Self Gifting</a> |
+                            <a href="#">Postcards</a> |
+                            <a href="#">Digital Gold</a> |
+                            <a href="#">Gold Savings Scheme</a> |
+                            <a href="#">Store Locator</a>
+                        </div>
+                        <hr>
+                    </div>
+
+                    <!-- Jewellery Section -->
+                    <div>
+                        <div class="section-title">Jewellery</div>
+                        <div class="search-links">
+                            <a href="#">Gold</a> |
+                            <a href="#">Diamond</a> |
+                            <a href="#">Solitaire</a> |
+                            <a href="#">Gemstone</a> |
+                            <a href="#">22kt Jewellery</a> |
+                            <a href="#">Platinum</a> |
+                            <a href="#">Charms</a> |
+                            <a href="#">Watch Charms</a> |
+                            <a href="#">Chains</a> |
+                            <a href="#">Silver Jewellery</a> |
+                            <a href="#">Rose Gold Jewellery</a> |
+                            <a href="#">White Gold Jewellery</a>
+                        </div>
+                        <hr>
+                    </div>
+
+                    <!-- Earrings Section -->
+                    <div>
+                        <div class="section-title">Earrings</div>
+                        <div class="search-links">
+                            <a href="#">Gold Earrings</a> |
+                            <a href="#">Diamond Earrings</a> |
+                            <a href="#">Solitaire Earrings</a> |
+                            <a href="#">Platinum Earrings</a> |
+                            <a href="#">Kids Earrings</a> |
+                            <a href="#">Jhumka Earrings</a> |
+                            <a href="#">Hoop Earrings</a> |
+                            <a href="#">Stud Earrings</a> |
+                            <a href="#">Pearl Earrings</a> |
+                            <a href="#">Fancy Earrings</a> |
+                            <a href="#">Stone Earrings</a>
+                        </div>
+                        <hr>
+                    </div>
+
+                    <!-- Rings Section -->
+                    <div>
+                        <div class="section-title">Rings</div>
+                        <div class="search-links">
+                            <a href="#">Diamond Rings</a> |
+                            <a href="#">Gold Rings</a> |
+                            <a href="#">Platinum Rings</a> |
+                            <a href="#">Solitaire Rings</a> |
+                            <a href="#">Gemstone Rings</a> |
+                            <a href="#">Mens Rings</a> |
+                            <a href="#">Engagement Ring</a> |
+                            <a href="#">Wedding Ring</a> |
+                            <a href="#">Cocktail Ring</a> |
+                            <a href="#">Infinity Rings</a> |
+                            <a href="#">Pearl Rings</a>
+                        </div>
+                        <hr>
+                    </div>
+
+                    <!-- Necklace Section -->
+                    <div>
+                        <div class="section-title">Necklace</div>
+                        <div class="search-links">
+                            <a href="#">Gold Necklace</a> |
+                            <a href="#">Diamond Necklace</a> |
+                            <a href="#">Kids Necklace</a> |
+                            <a href="#">Gemstone Necklace</a> |
+                            <a href="#">Ruby Necklace</a> |
+                            <a href="#">Choker Necklace</a> |
+                            <a href="#">Pearl Necklace</a> |
+                            <a href="#">Evil Eye Necklace</a>
+                        </div>
+                        <hr>
+                    </div>
+
+                    <!-- Bracelets Section -->
+                    <div>
+                        <div class="section-title">Bracelets </div>
+                        <div class="search-links">
+                            <a href="#">Gold Bracelets</a> |
+                            <a href="#">Diamond Bracelets</a> |
+                            <a href="#">Kids Bracelets</a> |
+                            <a href="#">Pearl Bracelets</a> |
+                            <a href="#">Evil Eye Bracelets</a> |
+                            <a href="#">Tennis Bracelets</a> |
+                            <a href="#">Chain Bracelets</a>
+                        </div>
+                        <hr>
+                    </div>
+
+                    <!-- Bangles Section -->
+                    <div>
+                        <div class="section-title">Bangles</div>
+                        <div class="search-links">
+                            <a href="#">Gold Bangles</a> |
+                            <a href="#">Diamond Bangles</a> |
+                            <a href="#">Kids Bangles</a> |
+                            <a href="#">Daily Wear Bangles</a> |
+                            <a href="#">Bridal Bangles</a> |
+                            <a href="#">Stone Bangles</a>
+                        </div>
+                        <hr>
+                    </div>
+
+                    <!-- Nose Pins Section -->
+                    <div>
+                        <div class="section-title">Nose Pins</div>
+                        <div class="search-links">
+                            <a href="#">Nose Rings</a> |
+                            <a href="#">Gold Nose Pins</a> |
+                            <a href="#">Diamond Nose Pins</a> |
+                            <a href="#">Nose Studs</a> |
+                            <a href="#">Pressing Nose Rings</a> |
+                            <a href="#">Stone Nose Rings</a>
+                        </div>
+                        <hr>
+                    </div>
+
+                    <!-- Pendants Section -->
+                    <div>
+                        <div class="section-title"> Pendants</div>
+                        <div class="search-links">
+                            <a href="#">Gold Pendants</a> |
+                            <a href="#">Diamond Pendants</a> |
+                            <a href="#">Solitaire Pendants</a> |
+                            <a href="#">Evil Eye Pendants</a> |
+                            <a href="#">Chain Pendants</a> |
+                            <a href="#">Om Pendants</a> |
+                            <a href="#">Butterfly Pendants</a>
+                        </div>
+                        <hr>
+                    </div>
+
+                    <!-- Mangalsutra Section -->
+                    <div>
+                        <div class="section-title">Mangalsutra</div>
+                        <div class="search-links">
+                            <a href="#">Gold Mangalsutra</a> |
+                            <a href="#">Diamond Mangalsutra</a> |
+                            <a href="#">Modern Mangalsutra</a> |
+                            <a href="#">South Indian Mangalsutra</a> |
+                            <a href="#">Fancy Mangalsutra</a> |
+                            <a href="#">Black Beads Mangalsutra</a> |
+                            <a href="#">Daily Use Mangalsutra</a>
+                        </div>
+                    </div>
+                </div>
+
+            </footer>
+            <!-- Bootstrap JavaScript Libraries -->
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+                integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+                crossorigin="anonymous"></script>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+                integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+                crossorigin="anonymous"></script>
+
+            <script>
+                function changeImage(src) {
+                    document.getElementById("mainImage").src = src;
+                }
+
+                function changeQuantity(change) {
+                    let quantityInput = document.getElementById("quantity");
+                    let currentQuantity = parseInt(quantityInput.value);
+
+                    if (!isNaN(currentQuantity)) {
+                        let newQuantity = currentQuantity + change;
+
+                        if (newQuantity >= 1 && newQuantity <= 10) {
+                            quantityInput.value = newQuantity;
+                        }
+                    }
+                }
+            </script>
+</body>
+
+</html>

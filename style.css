@@ -1,0 +1,643 @@
+  /* General Styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+:root {
+  --primary-font:"Poppins", sans-serif;;
+  --secondary-font: 'Montserrat', sans-serif;
+  --primary-color: #fff;
+  --secondary-color: #000;
+   --navbackground-color: rgb(26, 26, 120);
+}
+
+/* navbar start */
+.navfree{
+  background-color: var(--navbackground-color);
+    color: var(--primary-color);
+    text-align: center;
+}
+/* navbar end  */
+
+
+.navbar-nav .nav-item{
+  font-family: var(--primary-font);
+  font-size: 16px;
+  color: var(--primary-color);
+  text-transform:capitalize;
+}
+
+.logojewellerys{
+  border:  1 px solid var(--primary-color);
+  height: 70px;
+  width: 60x;
+}
+ /* Shop By Categories Start */
+ .dropdown-content {
+   color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+   text-align: left;
+ }
+
+ .dropdown:hover .dropdown-content {
+   display: block;
+ }
+
+
+ body {
+   background-color: var(--primary-color);
+   font-family: var(--primary-font);
+ }
+
+ .category-card {
+   position: relative;
+   text-align: center;
+   background:var(--primary-color);
+   padding: 10px;
+   border-radius: 10px;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+   transition: transform 0.3s ease-in-out;
+ }
+
+ .category-card img {
+   border-radius: 10px;
+   width: 100%;
+   height: 180px;
+   object-fit: cover;
+ }
+
+ .category-card p {
+   margin-top: 10px;
+   font-weight: bold;
+ }
+
+ .category-card:hover {
+   transform: translateY(-5px);
+ }
+
+ @media (min-width: 768px) and (max-width: 991.98px) {
+   .category-card {
+     height: 100%;
+     padding: 15px;
+   }
+
+   .category-card img {
+     height: 160px;
+   }
+
+   .category-card p {
+     font-size: 1rem;
+   }
+
+   .category-card .btn {
+     font-size: 0.8rem;
+     padding: 4px 10px;
+   }
+
+   .row.g-3 {
+     --bs-gutter-x: 1rem;
+     --bs-gutter-y: 1rem;
+   }
+ }
+
+ @media (min-width: 768px) and (max-width: 991.98px) {
+   .hide-on-tablet {
+     display: none !important;
+   }
+ }
+ /* Shop By Categories End */
+
+
+/* free shipping  section start */
+body {
+  font-family: var(--primary-font)
+}
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  /* Wrap items on smaller screens */
+  justify-content: center;
+  /* Center items */
+  align-items: center;
+  background-color: #e1dddceb;
+  padding: 20px;
+  gap: 20px;
+  /* Space between items */
+}
+
+.benefit-item {
+  display: flex;
+  flex-direction: column;
+  /* Stack icon + text */
+  align-items: center;
+  text-align: center;
+  color: #000;
+  width: 140px;
+  /* Fixed width for consistent layout */
+}
+
+.benefit-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+}
+
+.divider {
+  display: none;
+  /* Remove dividers across all views */
+}
+
+/* Optional: make icons slightly smaller on mobile */
+@media (max-width: 576px) {
+  .benefit-item {
+    width: 35%;
+    /* 2 items per row */
+  }
+}
+/* free shipping  section End */
+
+
+/* video start Studio */
+body {
+  font-family: var(--primary-font);
+  /* text-align: center; */
+  background-color: var(--primary-color);
+}
+
+.carousel-title {
+  font-size: 24px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.carousel-container {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  height: 400px;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  width: 250px;
+  height: 350px;
+  transition: transform 0.5s ease-in-out, opacity 0.5s;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  background: var(--primary-color);
+  opacity: 0.5;
+}
+
+.card video {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+
+}
+
+.card.active {
+  transform: scale(1.2);
+  opacity: 1;
+  z-index: 2;
+}
+
+.card:nth-child(1) {
+  transform: translateX(-220px) scale(0.9);
+  z-index: 1;
+}
+
+.card:nth-child(2) {
+  transform: translateX(-110px) scale(1);
+  z-index: 2;
+}
+
+.card:nth-child(3) {
+  transform: translateX(0px) scale(1.2);
+  z-index: 3;
+}
+
+.card:nth-child(4) {
+  transform: translateX(110px) scale(1);
+  z-index: 2;
+}
+
+.card:nth-child(5) {
+  transform: translateX(220px) scale(0.9);
+  z-index: 1;
+}
+
+.view-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00aaff;
+  color: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card.active .view-btn {
+  opacity: 1;
+}
+
+.nav-btn {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px 15px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+#prevBtn {
+  left: 10px;
+}
+
+#nextBtn {
+  right: 10px;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 300px;
+  }
+
+  .card {
+    width: 200px;
+    height: 280px;
+  }
+
+  .card:nth-child(1) {
+    transform: translateX(-180px) scale(0.8);
+  }
+
+  .card:nth-child(2) {
+    transform: translateX(-90px) scale(1);
+  }
+
+  .card:nth-child(3) {
+    transform: translateX(0px) scale(1.2);
+  }
+
+  .card:nth-child(4) {
+    transform: translateX(90px) scale(1);
+  }
+
+  .card:nth-child(5) {
+    transform: translateX(180px) scale(0.8);
+  }
+}
+/* video end */
+
+
+/* New Arrial Section Start */
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.product-price {
+  color: #d9534f;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 14px;
+}
+
+.discount {
+  color: green;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.star-rating {
+  color: gold;
+}
+
+.view-all {
+  float: right;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.view-all:hover {
+  text-decoration: underline;
+}
+
+/* New Arrial Section End */
+
+
+/* Traditional Jewellery section Start  */
+/* body {
+  background-color: #fffaf5;
+} */
+
+.section-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.underline {
+  width: 60px;
+  height: 3px;
+  background-color: #c49b63;
+  margin: 5px auto;
+}
+
+.jewelry-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.jewelry-card:hover {
+  transform: scale(1.05);
+}
+
+.jewelry-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.jewelry-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+
+}
+/* Traditional Jewellery section End */
+
+
+/* popular-searches start */
+.popular-searches {
+  /* padding: 40px 20px; */
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  font-weight: bold;
+  /* font-size: 150px; */
+  color: rgb(26, 26, 120);
+  /* Purple color */
+  margin-bottom: 8px;
+  /* margin-right: 100px; */
+  text-align: left;
+}
+
+.search-links a {
+  color: rgb(26, 26, 120);
+  text-decoration: none;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.search-links a:hover {
+  text-decoration: underline;
+}
+
+.search-links a:hover {
+  text-decoration: underline;
+}
+
+/* popular-searches end */
+
+
+
+/* Media Queries */
+/* Ensure navbar is properly aligned on mobile */
+.navbar-nav {
+  text-align: center;
+  width: 100%;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+/* Adjust search box */
+.search-box {
+  width: 60%;
+
+}
+
+.search-box input {
+  width: 100%;
+}
+
+/* Fix navigation links on small screens */
+.navbar-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Responsive - Mobile view */
+@media (max-width: 576px) {
+  .top-bar {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .logojewellerys {
+    width: 55px;
+    height: 45px;
+    /* border: 2px solid #000; */
+    margin: 0;
+    padding: 0;
+    /* max-height: 50px; */
+  }
+
+  .nav-icons {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .search-box {
+    position: absolute;
+    text-align: center;
+    width: 90%;
+    padding-top: 2px;
+
+  }
+
+
+}
+
+@media (min-width: 577px) and (max-width: 991px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-icons {
+    justify-content: center;
+  }
+
+  .logojewellerys {
+    max-height: 60px;
+  }
+}
+
+/* jewellery card start  */
+/* ----- Default Styles (Mobile First Approach) ----- */
+.jewelry-card {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.jewelry-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.jewelry-card img:hover {
+  transform: scale(1.05);
+}
+
+/* ----- Mobile Screens (max-width: 767px) ----- */
+@media (max-width: 767px) {
+  .jewelry-card img {
+    border-radius: 8px;
+  }
+
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* ----- Tablet Screens (min-width: 768px and max-width: 991px) ----- */
+@media (min-width: 768px) and (max-width: 991px) {
+  .jewelry-card img {
+    border-radius: 12px;
+  }
+}
+
+/* ----- Desktop Screens (min-width: 992px) ----- */
+@media (min-width: 992px) {
+  .jewelry-card img {
+    border-radius: 15px;
+  }
+}
+
+/* jewellery card end  */
+
+
+
+
+
+/* footer responsive start  */
+@media (max-width: 576px) {
+  footer h5 {
+    text-align: center;
+  }
+
+  footer ul {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  footer .form-control,
+  footer .btn {
+    width: 100%;
+  }
+
+  footer .list-unstyled.d-flex {
+    justify-content: center;
+  }
+
+  footer .d-flex.flex-sm-row.justify-content-between {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* footer responsive end  */
+.video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .video video {
+    height: 200px;
+    /* Tablet height */
+  }
+}
+
+@media (max-width: 576px) {
+  .video video {
+    height: 150px;
+    /* Mobile height */
+  }
+}

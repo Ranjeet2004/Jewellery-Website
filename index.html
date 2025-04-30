@@ -1,0 +1,1361 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Tj Jewellery</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Products.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <p class="navfree py-1 ">Free Shipping on orders of 6 items or more </p>
+        </div>
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <div class="container">
+                <a class="navbar-brand " href="index.html"><img src="assets/logo.png" alt="Tj Jewellers"
+                        class="logojewellerys"></a>
+                <form class="d-flex search-box position-relative" onsubmit="return false;">
+                    <input type="search" id="searchInput" class="form-control rounded-pill ps-5 border-gold shadow-sm"
+                        placeholder="Search for jewellery..." onkeyup="showSuggestions()">
+                    <button class="btn position-absolute start-0 top-50 translate-middle-y ms-3 text-gold" type="button"
+                        onclick="redirectToPage()">
+                        <i class="bi bi-search"></i>
+                    </button>
+                    <ul id="suggestionsList" class="suggestions-list"></ul>
+                </form>
+
+                <div class="nav-icons d-flex align-items-center">
+                    <a class="nav-link mx-2 fs-5" href="wishlist.html"><i class="bi bi-heart"></i></a>
+                    <a class="nav-link mx-2 fs-5" href="cart.html"><i class="bi bi-bag"></i></a>
+                    <a class="nav-link mx-2 fs-5" href="#" data-bs-toggle="modal" data-bs-target="#authModal">
+                        <i class="bi bi-person-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content p-4 rounded-4">
+                    <div class="modal-body text-center">
+                        <h4 class="fw-bold">Your Account</h4>
+                        <p class="text-muted mb-4">Access account &amp; manage your orders.</p>
+                        <div class="d-flex justify-content-center gap-3">
+                            <button class="btn btn-primary px-4 py-2 rounded"
+                                onclick="window.location.href='signup.html'">Sign Up</button>
+                            <button class="btn btn-login px-4 py-2 rounded"
+                                onclick="window.location.href='login.html'">Log
+                                In</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg sticky-lg-top mb-15 ">
+            <div class="container">
+                <div class="collapse navbar-collapse " id="navbarNav ">
+                    <ul class="navbar-nav g-4">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="necklace.html" id="navbarDropdown" role="button">
+                                necklace sets
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="Earrings.html" id="navbarDropdown" role="button">
+                                earrings
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="pendant.html" id="navbarDropdown" role="button">
+                                chain Pendant
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="finger_ring.html" id="navbarDropdown" role="button">
+                                finger rings
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="bangles.html" id="navbarDropdown" role="button">
+                                bangles
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="bracelets.html" id="navbarDropdown" role="button">
+                                men's bracelet
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="juda.html" id="navbarDropdown" role="button">
+                                juda
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="saree.html" id="navbarDropdown" role="button">
+                                saree pin
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown" href="maangtikka.html" id="navbarDropdown" role="button">
+                                maang tikka
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <main>
+        <!-- Bootstrap Modal -->
+        <div class="modal fade" id="bannerModal" tabindex="-1" aria-labelledby="bannerModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered"> <!-- Centered Class Added -->
+                <div class="modal-content">
+                    <div class="modal-body p-0">
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-3"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                        <a href="necklace.html">
+                            <img src="assets/Carousel_Desktop.jpg" class="img-fluid w-100" alt="Jewellery Banner">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel start -->
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item ">
+                    <a href="necklace.html">
+                        <img src="assets/photooo.avif" class="d-block w-100" alt="...">
+                    </a>
+                </div>
+                <div class="carousel-item active">
+                    <a href="necklace.html">
+                        <img src="assets/slide2.jpg" class="d-block w-100" alt="...">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="necklace.html">
+                        <img src="assets/slide3.jpg" class="d-block w-100" alt="...">
+                    </a>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- Carousel end -->
+
+        <!-- shop by category start -->
+        <div class="container my-4 py-2">
+            <h2 class="text-center mb-4 py-1">Shop By Categories</h2>
+            <div class="row g-3">
+                <!-- Jewelry Categories -->
+                <!-- <div class="col-md-3 col-sm-6"> -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="category-card">
+                        <img src="assets/ring.jpg" class="img-fluid" alt="Rings">
+                        <p>Rings</p>
+                        <a href="finger_ring.html" class="btn btn-primary btn-sm">Explore</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="category-card">
+                        <img src="assets/Earrings2.jpg" class="img-fluid" alt="Earrings">
+                        <p>Earrings</p>
+                        <a href="Earrings.html" class="btn btn-primary btn-sm">Explore</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="category-card">
+                        <img src="assets/Pendant.jpg" class=" img-fluid" alt="Pendants">
+                        <p>Pendants</p>
+                        <a href="pendant.html" class="btn btn-primary btn-sm">Explore</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="category-card">
+                        <img src="assets/Bracelet.jpg" class="img-fluid" alt="Bracelets">
+                        <p>Bracelets</p>
+                        <a href="bracelets.html" class="btn btn-primary btn-sm">Explore</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="category-card">
+                        <img src="assets/Bangle.jpg" class="img-fluid" alt="Bangles">
+                        <p>Bangles</p>
+                        <a href="bangles.html" class="btn btn-primary btn-sm">Explore</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="category-card">
+                        <img src="assets/Necklace_set__2.jpg" class="img-fluid" alt="Necklaces">
+                        <p>Necklaces</p>
+                        <a href="necklace.html" class="btn btn-primary btn-sm">Explore</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 hide-on-tablet">
+                    <div class="category-card">
+                        <img src="assets/1690455127394.jpeg" class="img-fluid" alt="Mangalsutra">
+                        <p>Maang Tikka</p>
+                        <a href="maangtikka.html" class="btn btn-primary btn-sm">Explore</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 hide-on-tablet">
+                    <div class="category-card">
+                        <img src="assets/1690435401464.jpeg" class="img-fluid" alt="Gold Coins">
+                        <p>Saree Pin </p>
+                        <a href="saree.html" class="btn btn-primary btn-sm">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--free shiping start -->
+        <section class="benefits">
+            <div class="benefit-item">
+                <img src="assets/certificate.png" alt="Certified">
+                <p>100% Certified Jewellery</p>
+            </div>
+            <div class="divider"></div>
+            <div class="benefit-item">
+                <img src="assets/certificate.png" alt="Platinum">
+                <p>Platinum Certified Jewellery</p>
+            </div>
+            <div class="divider"></div>
+            <div class="benefit-item">
+                <img src="assets/lifetime.png" alt="Buyback">
+                <p>Lifetime Buyback</p>
+            </div>
+            <div class="divider"></div>
+            <div class="benefit-item">
+                <img src="assets/returns.png" alt="Return">
+                <p>7 Days Return Policy</p>
+            </div>
+            <div class="divider"></div>
+            <div class="benefit-item">
+                <img src="assets/freeshipping.png" alt="Shipping">
+                <p>Free Shipping</p>
+            </div>
+        </section>
+        <!--free shiping end   -->
+
+        <!-- New Arrial Section start -->
+        <div class="container mt-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3>New Arrial</h3>
+                <a href="#" class="view-all">View All →</a>
+            </div>
+            <hr>
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1740223714457.jpeg" alt="Silver Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Glamorous Gold Polish White kundan & Pearl Dangle
+                                            Earrings</div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹233</span>
+                                            <span class="old-price">₹424</span>
+                                            <span class="discount">(45% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1740292429168.jpeg" alt="Zircon Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Silver plated Handcrafted Kundan White Pearl Earring
+                                        </div>
+                                        <div class="star-rating">★★★★☆</div>
+                                        <div>
+                                            <span class="product-price">₹362.88</span>
+                                            <span class="old-price">₹504</span>
+                                            <span class="discount">(28% OFF)</span>
+                                        </div>
+                                        <!-- <a href="view.html" class="btn btn-primary w-100 mt-2">View</a> -->
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1740219974077.jpeg" alt="Timeless Beauty Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Handcrafted Silver-Tone Hoop Earrings with Colorful
+                                            Kundan and Gemstone Beads
+                                        </div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹299</span>
+                                            <span class="old-price">₹472</span>
+                                            <span class="discount">(36% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 d-none d-lg-block mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1738586806876.jpeg" alt="Timeless Beauty Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Handcrafted Silver-Tone Hoop Earrings with Colorful
+                                            Kundan and Gemstone Beads
+                                        </div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹299</span>
+                                            <span class="old-price">₹472</span>
+                                            <span class="discount">(36% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- New Arrial Section End -->
+
+
+        <!-- Earings Section start -->
+        <div class="container mt-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3>Earings</h3>
+                <a href="Earrings.html" class="view-all">View All →</a>
+            </div>
+            <hr>
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1722073438446.jpeg" alt="Silver Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Gold plated Kundan studded Multi Color Pearl dangle
+                                            handcrafted Ethnic Earrings</div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹233</span>
+                                            <span class="old-price">₹424</span>
+                                            <span class="discount">(45% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1734940708543.jpeg" alt="Zircon Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Embrace Indian Heritage: Jhumka Earrings with Purple
+                                            and Gold</div>
+                                        <div class="star-rating">★★★★☆</div>
+                                        <div>
+                                            <span class="product-price">₹362.88</span>
+                                            <span class="old-price">₹504</span>
+                                            <span class="discount">(28% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1722072430753.jpeg" alt="Timeless Beauty Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Gold-Plated & Handcrafted Classic Dangle Earring
+                                        </div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹299</span>
+                                            <span class="old-price">₹472</span>
+                                            <span class="discount">(36% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 d-none d-lg-block mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1734847370970.jpeg" alt="Timeless Beauty Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Traditional Golden Chandbali Earrings with White
+                                            Accents</div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹299</span>
+                                            <span class="old-price">₹472</span>
+                                            <span class="discount">(36% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Earing Section End -->
+
+
+        <!-- Necklace Section start -->
+        <div class="container mt-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3>Necklace Set</h3>
+                <a href="necklace.html" class="view-all">View All →</a>
+            </div>
+            <hr>
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1718161623889.jpeg" alt="Silver Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Silver Plated AD Cocktail Necklace Set
+                                        </div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹233</span>
+                                            <span class="old-price">₹424</span>
+                                            <span class="discount">(45% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1718106535475.jpeg" alt="Zircon Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Rose Gold Plated Premium Ruby Pave AD Necklace Set
+                                        </div>
+                                        <div class="star-rating">★★★★☆</div>
+                                        <div>
+                                            <span class="product-price">₹362.88</span>
+                                            <span class="old-price">₹504</span>
+                                            <span class="discount">(28% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1711022791462.jpeg" alt="Timeless Beauty Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Contemporary rose gold necklace set featuring AD
+                                            stones
+                                        </div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹299</span>
+                                            <span class="old-price">₹472</span>
+                                            <span class="discount">(36% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 d-none d-lg-block mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1711105736146.jpeg" alt="Timeless Beauty Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Elegant Rose Gold Necklace set encrusted with radiant
+                                            white AD jewels
+                                        </div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹299</span>
+                                            <span class="old-price">₹472</span>
+                                            <span class="discount">(36% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Necklace Section End -->
+
+
+
+        <!-- Video Start -->
+        <div class="container-fluid video">
+            <video width="1503" height="350" autoplay loop muted>
+                <source src="assets/1724486867518.mp4" type="video/mp4">
+            </video>
+        </div>
+        <!-- Videos End -->
+
+        <!-- Traditional Section start -->
+        <div class="container mt-4">
+            <!-- <h3 class="section-title">Traditional Jewellery</h3> -->
+            <div class="row mt-4">
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="bangles.html">
+                        <div class="jewelry-card">
+                            <img src="assets/1713435346824.jpeg" alt="Bangles">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="bangles.html">
+                        <div class="jewelry-card">
+                            <img src="assets/1713435401640.jpeg" alt="Bangles">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="Earrings.html">
+                        <div class="jewelry-card">
+                            <img src="assets/1713435591278.jpeg" alt="Earrings">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 d-none d-lg-block mb-4">
+                    <a href="bangles.html">
+                        <div class="jewelry-card">
+                            <img src="assets/1713435297728.jpeg" alt="Rings">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Traditional Jewellery  section End -->
+
+        <!-- Rings Section start -->
+        <div class="container mt-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3>Rings</h3>
+                <a href="finger_ring.html" class="view-all">View All →</a>
+            </div>
+            <hr>
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1728213377635.jpeg" alt="Silver Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">2 Year warranty Gold Plated Pave AD studded Open
+                                            Statement Ring
+                                        </div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹233</span>
+                                            <span class="old-price">₹424</span>
+                                            <span class="discount">(45% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1709888706485.jpeg" alt="Zircon Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Rose Gold Plated AD Studded Round Finger Ring
+                                        </div>
+                                        <div class="star-rating">★★★★☆</div>
+                                        <div>
+                                            <span class="product-price">₹362.88</span>
+                                            <span class="old-price">₹504</span>
+                                            <span class="discount">(28% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1710406122399.jpeg" alt="Timeless Beauty Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Sterling Silver Ring with white & Maroon AD
+                                            embellishments</div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹299</span>
+                                            <span class="old-price">₹472</span>
+                                            <span class="discount">(36% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 d-none d-lg-block mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1728214207676.jpeg" alt="Timeless Beauty Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">2 Year warranty Gold Plated AD Stone Layer Adjustable
+                                            Ring</div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹299</span>
+                                            <span class="old-price">₹472</span>
+                                            <span class="discount">(36% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Rings Section End -->
+
+        <!-- Bangles  Section start -->
+        <div class="container mt-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3>Bangles</h3>
+                <a href="bangles.html" class="view-all">View All →</a>
+            </div>
+            <hr>
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1691121484021.jpeg" alt="Silver Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Unique Pattern Rose Gold Kada Bracelet</div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹233</span>
+                                            <span class="old-price">₹424</span>
+                                            <span class="discount">(45% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1692253837411.jpeg" alt="Zircon Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Unique Silver White & Pink AD Kada Bracelet</div>
+                                        <div class="star-rating">★★★★☆</div>
+                                        <div>
+                                            <span class="product-price">₹362.88</span>
+                                            <span class="old-price">₹504</span>
+                                            <span class="discount">(28% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1691066851718.jpeg" alt="Timeless Beauty Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Stunning Silver Plated Butterfly Bracelet</div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹299</span>
+                                            <span class="old-price">₹472</span>
+                                            <span class="discount">(36% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 d-none d-lg-block mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1691120935772.jpeg" alt="Timeless Beauty Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Star Sparkling Silver Bracelet</div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹299</span>
+                                            <span class="old-price">₹472</span>
+                                            <span class="discount">(36% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bangles Section End -->
+
+        <!-- Traditional Section start -->
+        <div class="container mt-4">
+            <h3 class="section-title">Traditional Jewellery</h3>
+            <div class="row mt-4">
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="finger_ring.html">
+                        <div class="jewelry-card">
+                            <img src="assets/1724384670437.jpeg" alt="rings">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <a href="bangles.html">
+                    <div class="jewelry-card">
+                        <img src="assets/1724384687830.jpeg" alt="Bangles">
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <a href="Earrings.html">
+                    <div class="jewelry-card">
+                        <img src="assets/1724384709686.jpeg" alt="Earrings">
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 d-none d-lg-block mb-4">
+                <a href="necklace.html">
+                    <div class="jewelry-card">
+                        <img src="assets/1724384731846.jpeg" alt="necklace">
+                    </div>
+                </a>
+            </div>
+        </div>
+        </div>
+        <!-- Traditional Jewellery  section End -->
+
+
+        <!-- Juda Section start -->
+        <div class="container mt-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3>Juda</h3>
+                <a href="Juda.html" class="view-all">View All →</a>
+            </div>
+            <hr>
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1690455127394.jpeg" alt="Silver Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Traditional Gold Plated with Red & Green Kundan Kamar
+                                            Juda
+                                        </div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹233</span>
+                                            <span class="old-price">₹424</span>
+                                            <span class="discount">(45% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1690455422109.jpeg" alt="Zircon Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Traditional Antique Multi color Gold Kamar Juda
+                                        </div>
+                                        <div class="star-rating">★★★★☆</div>
+                                        <div>
+                                            <span class="product-price">₹362.88</span>
+                                            <span class="old-price">₹504</span>
+                                            <span class="discount">(28% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1690453687142.jpeg" alt="Timeless Beauty Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Traditional Meenakari Multi color Gold Kamar Juda
+                                        </div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹299</span>
+                                            <span class="old-price">₹472</span>
+                                            <span class="discount">(36% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 d-none d-lg-block mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1691407619035.jpeg" alt="Timeless Beauty Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Traditional Meenakari Antique Gold Kamar Juda
+                                        </div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹299</span>
+                                            <span class="old-price">₹472</span>
+                                            <span class="discount">(36% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Juda Section End -->
+
+
+        <!-- Saree Pin Section start -->
+        <div class="container mt-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3>Saree Pin</h3>
+                <a href="saree.html" class="view-all">View All →</a>
+            </div>
+            <hr>
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1690442510764.jpeg" alt="Silver Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Traditional Floral Gold Saree Pin
+                                        </div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹233</span>
+                                            <span class="old-price">₹424</span>
+                                            <span class="discount">(45% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1690440220903.jpeg" alt="Zircon Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Traditional Meenakari Gold Saree Pin
+                                        </div>
+                                        <div class="star-rating">★★★★☆</div>
+                                        <div>
+                                            <span class="product-price">₹362.88</span>
+                                            <span class="old-price">₹504</span>
+                                            <span class="discount">(28% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1690443253763.jpeg" alt="Timeless Beauty Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Traditional Floral Gold Saree Pin
+                                        </div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹299</span>
+                                            <span class="old-price">₹472</span>
+                                            <span class="discount">(36% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 d-none d-lg-block mb-4">
+                                <div class="product-card">
+                                    <a href="view.html">
+                                        <div class="product-assets">
+                                            <img src="assets/1690442123172.jpeg" alt="Timeless Beauty Necklace">
+                                        </div>
+                                    </a>
+                                    <div class="product-info">
+                                        <div class="product-title">Traditional Floral Gold Saree Pin
+                                        </div>
+                                        <div class="star-rating">★★★★★</div>
+                                        <div>
+                                            <span class="product-price">₹299</span>
+                                            <span class="old-price">₹472</span>
+                                            <span class="discount">(36% OFF)</span>
+                                        </div>
+                                        <button class="btn btn-outline-primary w-100 mt-2">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Saree Pin Section End -->
+
+
+        <!-- banner start -->
+        <div class="container py-5">
+            <div class="row">
+                <div class="col">
+                    <a href="finger_ring.html"><img src="assets/2X-desktop.jpg" alt="Banner" class="img-fluid"></a>
+                </div>
+                <div class="col">
+                    <a href="bangles.html"><img src="assets/2X-CityBannerDLFPromenadeMall.jpg" alt="Banner"
+                            class="img-fluid"></a>
+                </div>
+            </div>
+        </div>
+        <!-- banner end -->
+
+    </main>
+    <footer>
+        <!-- place footer here -->
+        <div class="container">
+            <footer class="py-5">
+                <div class="row">
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>Our Policies</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy
+                                    Policy</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Refund
+                                    Policy</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Terms of
+                                    Usage</a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Shipping
+                                    Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>About Us</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"></a></li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact
+                                    Us </a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Sitemap</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5>Contact Details</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary"> </a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-5 offset-md-1 mb-3">
+                        <form>
+                            <h5>Subscribe to our newsletter</h5>
+                            <p>Monthly digest of what's new and exciting from us.</p>
+                            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                                <label for="newsletter1" class="visually-hidden">Email address</label>
+                                <input id="newsletter1" type="text" class="form-control" placeholder="Email address"
+                                    autocomplete="off">
+                                <button class="btn btn-primary" type="button">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                    <p>© 2024 Company, Inc. All rights reserved.</p>
+                    <ul class="list-unstyled d-flex">
+                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#twitter"></use>
+                                </svg></a></li>
+                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#instagram"></use>
+                                </svg></a></li>
+                        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                                    <use xlink:href="#facebook"></use>
+                                </svg></a></li>
+                    </ul>
+                </div>
+        </div>
+
+    </footer>
+    </div>
+
+    <div class="container popular-searches ">
+        <h4 class="mb-4">Popular Searches</h4>
+
+        <!-- Gifts Section -->
+        <div>
+            <div class="section-title">Gifts</div>
+            <div class="search-links">
+                <a href="#">Gifts For Men</a> |
+                <a href="#">Womens Day Gifts</a> |
+                <a href="#">Gifts Under 10000</a> |
+                <a href="#">Gifts Under 30000</a> |
+                <a href="#">Gifts Under 50000</a> |
+                <a href="#">CaratLane Gift Cards</a> |
+                <a href="#">Birthday Gifts</a> |
+                <a href="#">Anniversary Gifts</a> |
+                <a href="#">Romantic Gifts</a> |
+                <a href="#">Gifts For Kids</a> |
+                <a href="#">Gifts For Sister</a> |
+                <a href="#">Gifts For Mom</a> |
+                <a href="#">Gifts For Girlfriend</a>
+            </div>
+            <hr>
+        </div>
+
+        <!-- CaratLane Exclusives -->
+        <div>
+            <div class="section-title">CaratLane Exclusives</div>
+            <div class="search-links">
+                <a href="#">New Arrivals</a> |
+                <a href="#">Self Gifting</a> |
+                <a href="#">Postcards</a> |
+                <a href="#">Digital Gold</a> |
+                <a href="#">Gold Savings Scheme</a> |
+                <a href="#">Store Locator</a>
+            </div>
+            <hr>
+        </div>
+
+        <!-- Jewellery Section -->
+        <div>
+            <div class="section-title">Jewellery</div>
+            <div class="search-links">
+                <a href="#">Gold</a> |
+                <a href="#">Diamond</a> |
+                <a href="#">Solitaire</a> |
+                <a href="#">Gemstone</a> |
+                <a href="#">22kt Jewellery</a> |
+                <a href="#">Platinum</a> |
+                <a href="#">Charms</a> |
+                <a href="#">Watch Charms</a> |
+                <a href="#">Chains</a> |
+                <a href="#">Silver Jewellery</a> |
+                <a href="#">Rose Gold Jewellery</a> |
+                <a href="#">White Gold Jewellery</a>
+            </div>
+            <hr>
+        </div>
+
+        <!-- Earrings Section -->
+        <div>
+            <div class="section-title">Earrings</div>
+            <div class="search-links">
+                <a href="#">Gold Earrings</a> |
+                <a href="#">Diamond Earrings</a> |
+                <a href="#">Solitaire Earrings</a> |
+                <a href="#">Platinum Earrings</a> |
+                <a href="#">Kids Earrings</a> |
+                <a href="#">Jhumka Earrings</a> |
+                <a href="#">Hoop Earrings</a> |
+                <a href="#">Stud Earrings</a> |
+                <a href="#">Pearl Earrings</a> |
+                <a href="#">Fancy Earrings</a> |
+                <a href="#">Stone Earrings</a>
+            </div>
+            <hr>
+        </div>
+
+        <!-- Rings Section -->
+        <div>
+            <div class="section-title">Rings</div>
+            <div class="search-links">
+                <a href="#">Diamond Rings</a> |
+                <a href="#">Gold Rings</a> |
+                <a href="#">Platinum Rings</a> |
+                <a href="#">Solitaire Rings</a> |
+                <a href="#">Gemstone Rings</a> |
+                <a href="#">Mens Rings</a> |
+                <a href="#">Engagement Ring</a> |
+                <a href="#">Wedding Ring</a> |
+                <a href="#">Cocktail Ring</a> |
+                <a href="#">Infinity Rings</a> |
+                <a href="#">Pearl Rings</a>
+            </div>
+            <hr>
+        </div>
+
+        <!-- Necklace Section -->
+        <div>
+            <div class="section-title">Necklace</div>
+            <div class="search-links">
+                <a href="#">Gold Necklace</a> |
+                <a href="#">Diamond Necklace</a> |
+                <a href="#">Kids Necklace</a> |
+                <a href="#">Gemstone Necklace</a> |
+                <a href="#">Ruby Necklace</a> |
+                <a href="#">Choker Necklace</a> |
+                <a href="#">Pearl Necklace</a> |
+                <a href="#">Evil Eye Necklace</a>
+            </div>
+            <hr>
+        </div>
+
+        <!-- Bracelets Section -->
+        <div>
+            <div class="section-title">Bracelets </div>
+            <div class="search-links">
+                <a href="#">Gold Bracelets</a> |
+                <a href="#">Diamond Bracelets</a> |
+                <a href="#">Kids Bracelets</a> |
+                <a href="#">Pearl Bracelets</a> |
+                <a href="#">Evil Eye Bracelets</a> |
+                <a href="#">Tennis Bracelets</a> |
+                <a href="#">Chain Bracelets</a>
+            </div>
+            <hr>
+        </div>
+
+        <!-- Bangles Section -->
+        <div>
+            <div class="section-title">Bangles</div>
+            <div class="search-links">
+                <a href="#">Gold Bangles</a> |
+                <a href="#">Diamond Bangles</a> |
+                <a href="#">Kids Bangles</a> |
+                <a href="#">Daily Wear Bangles</a> |
+                <a href="#">Bridal Bangles</a> |
+                <a href="#">Stone Bangles</a>
+            </div>
+            <hr>
+        </div>
+
+        <!-- Nose Pins Section -->
+        <div>
+            <div class="section-title">Nose Pins</div>
+            <div class="search-links">
+                <a href="#">Nose Rings</a> |
+                <a href="#">Gold Nose Pins</a> |
+                <a href="#">Diamond Nose Pins</a> |
+                <a href="#">Nose Studs</a> |
+                <a href="#">Pressing Nose Rings</a> |
+                <a href="#">Stone Nose Rings</a>
+            </div>
+            <hr>
+        </div>
+
+        <!-- Pendants Section -->
+        <div>
+            <div class="section-title"> Pendants</div>
+            <div class="search-links">
+                <a href="#">Gold Pendants</a> |
+                <a href="#">Diamond Pendants</a> |
+                <a href="#">Solitaire Pendants</a> |
+                <a href="#">Evil Eye Pendants</a> |
+                <a href="#">Chain Pendants</a> |
+                <a href="#">Om Pendants</a> |
+                <a href="#">Butterfly Pendants</a>
+            </div>
+            <hr>
+        </div>
+
+        <!-- Mangalsutra Section -->
+        <div>
+            <div class="section-title">Mangalsutra</div>
+            <div class="search-links">
+                <a href="#">Gold Mangalsutra</a> |
+                <a href="#">Diamond Mangalsutra</a> |
+                <a href="#">Modern Mangalsutra</a> |
+                <a href="#">South Indian Mangalsutra</a> |
+                <a href="#">Fancy Mangalsutra</a> |
+                <a href="#">Black Beads Mangalsutra</a> |
+                <a href="#">Daily Use Mangalsutra</a>
+            </div>
+        </div>
+    </div>
+
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+        </script>
+    <script src="script.js"></script>
+
+
+    <!-- JavaScript to Show Modal on Page Load -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var myModal = new bootstrap.Modal(document.getElementById('bannerModal'));
+            myModal.show();
+        });
+    </script>
+
+</body>
+
+</html>
